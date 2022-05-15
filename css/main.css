@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Potta One', cursive;
+font-family: 'Roboto', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+img{
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --heading: rgb(0, 10, 45);
+    --para: #000000;
+    --para-tint: #bb2225;
+    --white: #fff;
+    --helper: #551A8B;
+    --helper-tint: #f3f4ff;
+    --black: #212529;
+    --bg: rgb(249, 249, 255);
+    --gradient: linear-gradient(0deg, rgb(132, 144, 255), 0% rgb(98, 189, 252)100%);
+    --gradientsupport: -webkit-linear-gradient(0deg, rgb(132, 144, 255) 0%,
+            rgb(98, 189, 252) 100%);
+
+
+    --shadow: 0px 0px 20px 0px rgb(132 144 255/20%);
+    --shadowbox: 0px 20px 20px 0px rgb(132 144 255/30%);
+    --gradiant-helper:
+}
+
+/* .linear-gradiunt{
+    
+} */
+html {
+    font-size: 62.5%;
+    /* (it means 1rem=10px) */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    /* color: var(--white); */
+}
+
+h1 {
+    color: var(--heading);
+    font-size: 6rem;
+    font-weight: 600
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p {
+    color: var(--para);
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+li {
+    /* list-style: none; */
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.grid {
+    display: grid;
+
+    gap: 9rem;
+}
+
+.grid-two-column {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-three-column {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-four-column {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.container {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.container .inner_text h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+
+/* =============header start======================== */
+
+
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.primary-btn {
+    background-color: var(--para-tint);
+    color: var(--white);
+}
+
+.secondary-btn {
+    background-color: var(--white);
+    color: var(--para-tint);
+}
+
+.logo img{
+    width: 100%;
+}
+nav{
+    background-color: #000;
+    color: white;
+    padding: 3rem 0;
+}
+nav span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo_img img{
+    width: 20%;
+}
+.logo_img{
+    display: flex;
+    justify-content: right;
+}
+.content{
+    font-family: 'Potta One', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.container{
+/* background-color: red;    */
+padding: 2rem 0; 
+width: 80vw;
+
+}
+.language-html{
+    padding-left: 2rem;
+    align-items: center;
+}
+.copy-to-clipboard-button span{
+    border: 1px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+
+.container li{
+    font-size: 2.4rem;
+}
