@@ -2,110 +2,346 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML tempalte</title>
-    <link rel="stylesheet" href="./css/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <!-- <script src="all.js"></script> -->
-    <!-- ######## swiiper cdn ################### -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <!--=================== font awsome link========================= -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/prism.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADVANCE  PHP</title>
+<link rel="stylesheet" href="./css/main.css" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+rel="stylesheet">
+<!-- <script src="all.js"></script> -->
+<!-- ######## swiiper cdn ################### -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<!--=================== font awsome link========================= -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./css/prism.css">
+
 
 </head>
 
 <body>
-    <nav>
-        <span class="logo">
-            <div class="logo_img">
-                <img src="./webImages/copy_logo.webp" alt="">
-            </div>
+<nav>
+<span class="logo">
+<div class="logo_img">
+<img src="./webImages/copy_logo.webp" alt="">
+</div>
 
 
-            <div class="content center">
-                This is PHP Cheetsheet for you!
-            </div>
+<div class="content center">
+This is   Advance Php Cheetsheet for you!
+</div>
 
-        </span>
+</span>
 
-    </nav>
-    <div class="container">
-        <ol>
-<li>code for making connection between php and mysql
-<pre class="language-php"><code>&lt;?php
-    $username="root";
-    $password="";
-    $server='localhost';
-    $db='talhayoutube';
-    $con=mysqli_connect($server,$username,$password,$db);
-    ?&gt;</code>
+</nav>
+<div class="container">
+<ol>
+<li>
+<h4>Example  of class in advance php </h4>
+<pre class="language-php">
+<code>     
+&lt;?php
+
+class mobile{
+function ShowModel($model){
+echo "you mobile name is $model";
+}
+function changeModel($modelChange){
+echo "you new  mobile name is $modelChange";
+}
+
+}
+function LINEBREAK(){
+echo "&lt;br&gt;";
+};
+
+
+$samsung=new mobile;
+$samsung-&gt;ShowModel("SamsungGalaxyj5");
+LINEBREAK();
+
+$samsung-&gt;changeModel("LGKG95");
+LINEBREAK();
+
+?&gt;
+</code>
+</pre>
+</li>
+<li>
+<h4>Example  of Constructor in advance php </h4>
+<pre class="language-php">
+<code>     
+&lt;?php
+
+class Mobile {
+public $model;
+
+
+function __construct($model) {
+$this-&gt;model = $model;
+echo $this-&gt;model;
+}
+
+}
+
+$samsung = new Mobile("Samsunggalaxyj5");
+?&gt;
+</code>
+</pre>
+</li>
+<li>
+<h4>Single inheritance example  in advance php </h4>
+<pre class="language-php">
+<code>     
+
+class father{
+    public $a;
+    public $b;
+    function waoo($x,$y){
+       $this-&gt;a=$x;
+       $this-&gt;b=$y;
+    }
+ }
+ 
+ 
+ class son extends father{
+    function display(){
+       echo ($this-&gt;a+$this-&gt;b);
+    }
+ }
+ $obj=new son;
+ $obj-&gt;waoo(3,5);
+ $obj-&gt;display();
+</code>
+</pre>
+</li>
+<li>
+<h4>Multiple inheritance example  in advance php </h4>
+<pre class="language-php">
+<code>     
+
+
+    class father{
+        public $a;
+        public $b;
+        function waoo($x,$y){
+           $this-&gt;a=$x;
+           $this-&gt;b=$y;
+        }
+     }
+     
+     
+     class son extends father{
+        public $c=10;
+        public $sum;
+        function sum(){
+          $this-&gt;sum= $this-&gt;a+$this-&gt;b+$this-&gt;c;
+        }
+     }
+     class grandSon extends son{
+     function display(){
+        return $this-&gt;sum;
+     }
+     }
+     
+     $mom=new grandSon;
+     $mom-&gt;waoo(4,6);
+     $mom-&gt;sum();
+     echo $mom-&gt;display();
+     
+</code>
+</pre>
+</li>
+<li>
+<h4>static varaible example</h4>
+<pre class="language-php">
+<code>     
+
+    class mobile{
+        public static $a=10;
+        function samsung(){
+           echo self::$a;
+        }
+     
+     
+     
+     }
+     $obj=new mobile;
+     $obj-&gt;samsung();
+     
+     
+     
+</code>
+</pre>
+</li>
+<li>
+<h4>static function example</h4>
+<pre class="language-php">
+<code>     
+
+    
+class  mobile{
+    public static function show($a){
+ 
+ echo "this is statixc function $a";
+    }
+ }
+ mobile::show(10);
+     
+     
+     
+</code>
+</pre>
+</li>
+<li>
+<h4>info about static</h4>
+<pre class="language-php">
+<code>     
+a statice variable can access in normal function but a noramal variable cannot access
+in static function     
+</code>
+</pre>
+</li>
+</li>
+<li>
+<h4>ABSTRACT CLASS EXAMPLE</h4>
+<pre class="language-php">
+<code>     
+   abstract class Mobile{
+      function hello(){
+          echo "hello";
+      }
+      abstract function show();
+  }
+  class samsung extends mobile{
+      function show(){
+          echo "this is samsung mobile";
+      }
+  }
+  $m=new samsung;
+  $m-&gt;show();
+</code>
+</pre>
+</li>
+<li>
+<h4>const variable example</h4>
+<pre class="language-php">
+<code>     
+   class mobile{
+      public const x=10;
+       function show(){
+       echo self::x;
+       }
+   }
+   $name= new mobile;
+   $name->show(4);
+</code>
+</pre>
+</li>
+<li>
+<h4> single Interface  example</h4>
+<pre class="language-php">
+<code>     
+   interface Mobile{
+      function model();
+      function color();
+      function screenSize();
+  }
+  class samsung implements mobile{
+  function model(){
+      echo "Samsung galaxy j5";
+  }
+  function color(){
+      echo "green";
+  }
+  function screenSize(){
+      echo "20in";
+  }
+  }
+  function LineBreak(){
+      echo "<br>";
+  }
+  $smasungDetails=new samsung;
+  $smasungDetails->model();
+  LineBreak();
+  $smasungDetails->color();
+  LineBreak();
+  $smasungDetails->screenSize();
+  LineBreak();
+</code>
+</pre>
+</li>
+<li>
+<h4> Multiple Interface  example</h4>
+<pre class="language-php">
+<code>     
+   interface father{
+      const a=100;
+      function dispA();
+  }
+  interface Mother{
+      const b=200;
+      function dispB();
+  }
+  class son implements father,Mother{
+      function dispA(){}
+      function dispB(){}
+      function display(){
+          echo father::a;
+          echo "<br>";
+          echo Mother::b;
+          echo "<br>";
+      }
+  }
+  $obj=new son;
+  $obj->display();
+</code>
+</pre>
+</li>
+<li>
+<h4> implementt and extend example</h4>
+<pre class="language-php">
+<code>     
+   class samsung{
+      function model(){
+      echo "Your mobile name is samsung";
+      }
+      }
+      interface LG{
+      const LGname="lgkg95";
+      function LgModel();
+      }
+      class geo extends samsung implements LG{
+      function LgModel(){
+      echo LG::LGname;
+      }
+      
+      }
+      $obj=new geo;   
+      $obj->LgModel();
+      
+</code>
 </pre>
 </li>
 
-            <li>PHP FORM PUT IN HTML FILE
-<pre class="language-html"><code>&lt;form  method="post"&gt;
-&lt;div  class="input"&gt;
-&lt;input type="text" placeholder="enter your name" name="user"&gt;
-&lt;input type="text" placeholder="enter your quilification" name="degree"&gt;
-&lt;input type="text" placeholder="enter your mobile number" name="number"&gt;
-&lt;input type="text" placeholder="Email id" name="email"&gt;
-&lt;input type="text" placeholder="any refrences" name="ref"&gt;
-&lt;input type="text" placeholder="web developer" name="job_post"&gt;
 
-&lt;/div&gt;
-&lt;div  class="inner_btn"&gt;
-&lt;input type="submit" class="btn secondary_btn" name="submit"&gt;
-&lt;/div&gt;
-&lt;/form&gt;
-</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
-            <li>HTML BOILER PLATE
-                <pre class="language-html"><code>HTML</code>
-                </pre>
-            </li>
 
-        </ol>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/prism.js"></script>
+
+
+
+
+
+
+</ol>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/prism.js"></script>
+
 </body>
 
 </html>
