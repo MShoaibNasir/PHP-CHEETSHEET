@@ -329,6 +329,52 @@ in static function
 
 
 
+<li>
+<h4> implementt and extend example</h4>
+<pre class="language-php">
+<code>     
+ <?php 
+class myexception extends Exception {
+    function errorMessage(){
+        echo "error from my exception".$this->getMessage()."<br>";
+    }
+}
+function LineBreak(){
+    echo "<br>";
+}
+$num=5;
+try {  
+    //code that can throw exception
+    if($num==4){
+    throw new Exception("your number is 4");
+    }if($num==5){
+        throw new myexception("your number is 5");
+        }
+    else{
+        echo "you inserted right number";
+        LineBreak();
+    }
+    
+}   
+//catch block  
+catch (Exception $e) {  
+    //code to print exception caught in the block  
+    echo $e->getMessage();
+}  
+//finally block  
+finally {  
+    //any code that will always execute   
+    echo "now must making you own error message";
+    LineBreak();
+}  
+?>
+
+
+
+      
+</code>
+</pre>
+</li>
 
 
 
