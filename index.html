@@ -380,6 +380,33 @@ finally {
 
 
 
+<li>
+<h4> implementt and extend example</h4>
+<pre class="language-php">
+<code>     
+ <?php
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL,"https://jsonplaceholder.typicode.com/users");
+curl_setopt($ch, CURLOPT_POST, false); 
+// curl_setopt($ch, CURLOPT_POSTFIELDS,"id=333");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result=curl_exec($ch);
+print_r($result);
+curl_close($ch);
+
+
+?>
+
+
+
+      
+</code>
+</pre>
+</li>
+
+
 </ol>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js"
