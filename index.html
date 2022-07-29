@@ -117,6 +117,75 @@ class father{
 </code>
 </pre>
 </li>
+    
+ <li>
+<h4>Single inheritance example  in advance php </h4>
+<pre class="language-php">
+<code>     
+
+<?php 
+$conn=mysqli_connect("localhost","root","","mycurl");
+$name= $_GET['name'];
+$price= $_GET['price'];
+$qty= $_GET['qty'];
+// $action=$_GET("action");
+// if($action=="save"){
+$queryone="INSERT INTO product (name, price, qty) VALUES ( '$name', '$price', '$qty')";
+$run=mysqli_query($conn,$queryone);
+if($run){
+    echo "data inserted successfully";
+}else{
+    echo "not inserted";
+}
+    
+}
+elseif($action=="show"){
+    $name=$_GET['name'];
+    $querytwo="SELECT * FROM product where name like '%$name%'";
+    $querythree="SELECT * FROM product";
+    $run2=mysqli_query($conn,$querythree);
+    $fet=mysqli_fetch_assoc($run2);
+    $a=json_encode($fet);
+    $countdata=mysqli_num_rows($run2);
+    if($countdata>0){
+        $i=0;
+        while($fet){
+      echo $a;
+         
+        }
+        $i++;
+    }
+    
+
+    
+    
+}
+
+
+
+?>
+</code>
+</pre>
+</li>   
+ 
+ <li>
+<h4>Single inheritance example  in advance php </h4>
+<pre class="language-php">
+<code>     
+
+
+$url="http://localhost/new%20laravel/mycurl/index.php";
+$ch = curl_init();
+curl_setopt($ch,CURLOPT_URL,$url);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+$status=curl_exec($ch);
+curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+echo $status;
+curl_close($ch);
+</code>
+</pre>
+</li>      
+    
 <li>
 <h4>Multiple inheritance example  in advance php </h4>
 <pre class="language-php">
